@@ -31,6 +31,11 @@ echo "=============50%"
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
+sudo apt autoremove default-jre 
+sudo apt-get purge default-jre-\*
+sudo add-apt-repository ppa:linuxuprising/java -y
+sudo apt update
+sudo apt-get install default-jre
 sudo apt-get install -y xrdp > /dev/null 2>&1
 echo "=================70%"
 echo xfce4-session >~/.xsession
