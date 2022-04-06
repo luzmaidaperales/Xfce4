@@ -33,9 +33,10 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
 sudo apt autoremove default-jre 
 sudo apt-get purge default-jre-\*
+sudo apt update && sudo apt upgrade -y
 sudo add-apt-repository ppa:linuxuprising/java -y
 sudo apt update
-sudo apt-get install default-jre
+sudo apt-get install oracle-java17-installer oracle-java17-set-default
 sudo apt-get install -y xrdp > /dev/null 2>&1
 echo "=================70%"
 echo xfce4-session >~/.xsession
