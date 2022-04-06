@@ -33,10 +33,13 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
 sudo apt autoremove default-jre 
 sudo apt-get purge default-jre-\*
-sudo apt update && sudo apt upgrade -y
-sudo add-apt-repository ppa:linuxuprising/java -y
-sudo apt update
-sudo apt-get install oracle-java17-installer oracle-java17-set-default
+apt-get install curl -y
+curl -L -b "oraclelicense=a" -O http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
+sudo mkdir /usr/local/oracle-java-8
+sudo tar -zxf jdk-8u191-linux-x64.tar.gz -C /usr/local/oracle-java-8
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/oracle-java-8/jdk1.8.0_191/bin/java" 1500
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/oracle-java-8/jdk1.8.0_191/bin/javac" 1500
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/oracle-java-8/jdk1.8.0_191/bin/javaws" 1500
 sudo apt-get install -y xrdp > /dev/null 2>&1
 echo "=================70%"
 echo xfce4-session >~/.xsession
